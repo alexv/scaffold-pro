@@ -61,9 +61,7 @@ inquirer
       message: 'Create test file for component?'
     }
   ])
-  .then(args => {
-    return generator(args, componentPath)
-  })
+  .then(args => generator(args, componentPath))
   .then(args => {
     console.log(
       chalk.green(
