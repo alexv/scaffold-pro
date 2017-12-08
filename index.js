@@ -5,15 +5,13 @@ const program = require('commander')
 const chalk = require('chalk')
 const pkg = require('./package.json')
 
-const scaffold = require('./scaffold')
-
 program
   .version(pkg.version)
-  .command('')
+  .command('test')
   .description('scaffold up')
   .action(() => {
     console.log(chalk.blue('whats good'))
-    scaffold()
+    require('./scaffold')
   })
 
 program.parse(process.argv)

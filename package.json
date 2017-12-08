@@ -1,14 +1,17 @@
 {
   "name": "scaffold-pro",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Build components, make money.",
-  "main": "index.js",
+  "main": "scaffold.js",
   "repository": "git@github.com:avill01/scaffold-pro.git",
   "author": "Alex Villarreal",
   "license": "MIT",
   "private": false,
   "scripts": {
     "start": "node ./scaffold.js"
+  },
+  "bin": {
+    "scaffold-pro": "./index.js"
   },
   "dependencies": {
     "chalk": "^1.1.3",
