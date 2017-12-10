@@ -9,7 +9,7 @@ program
   .command('build')
   .description('make components')
   .action(() => {
-    require('./scaffold')
+    require('./commands/scaffold')
   })
 
 program
@@ -21,6 +21,7 @@ program
     // add components.js to components directory
     // maybe create example component/container
     console.log('legoo')
+    // require('./commands/init')
   })
 
 program.parse(process.argv)
