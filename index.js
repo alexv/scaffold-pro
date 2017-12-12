@@ -17,7 +17,6 @@ program
   .command('init')
   .description('initialize scaffold project')
   .action(() => {
-    console.log('NEED TO ADD INDEX FILE TO COMPONENTS FOLDER')
     require('./commands/init')
   })
 

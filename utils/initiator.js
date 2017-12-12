@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const chalk = require('chalk')
 const generator = require('../utils/generator.js')
 
 const makeFolder = newComponentPath => {
@@ -10,20 +11,25 @@ const makeFolder = newComponentPath => {
 
 module.exports = componentPath => {
   return new Promise((resolve, reject) => {
+    console.log(
+      chalk.green('Creating ') +
+        chalk.yellow.bold('Components') +
+        chalk.green(' folder')
+    )
+    console.log('')
     makeFolder(componentPath)
-      .then(() =>
-        generator(
-          { name: 'Example', state: true, redux: true, tests: true },
-          componentPath
-        )
-      )
       .then(() => {
+        console.log(
+          chalk.green('Creating ') +
+            chalk.yellow.bold('index.js') +
+            chalk.green(' at ') +
+            chalk.yellow(componentPath)
+        )
         return new Promise((resolve, reject) => {
           let err = false
           let read = fs.createReadStream(
             path.resolve(__dirname, '../templates/allComponents.js')
           )
-          console.log(componentPath)
           let write = fs.createWriteStream(
             path.resolve(componentPath, 'index.js')
           )
@@ -38,10 +44,7 @@ module.exports = componentPath => {
 
           write.on('open', () => {
             read.on('data', chunk => {
-              write.write(
-                chunk
-                  .toString()
-              )
+              write.write(chunk.toString())
             })
           })
 
@@ -52,6 +55,12 @@ module.exports = componentPath => {
           })
         })
       })
+      .then(() =>
+        generator(
+          { name: 'Example', state: true, redux: true, tests: true },
+          componentPath
+        )
+      )
       .catch(console.error)
   })
 }
