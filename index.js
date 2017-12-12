@@ -21,7 +21,7 @@ program
     // add components.js to components directory
     // maybe create example component/container
     console.log('legoo')
-    // require('./commands/init')
+    require('./commands/init')
   })
 
 program.parse(process.argv)

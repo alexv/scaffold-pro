@@ -84,6 +84,7 @@ const writeTemplates = (newComponentPath, args) => {
 module.exports = (args, componentPath) => {
   return new Promise((resolve, reject) => {
     let newComponentPath = path.resolve(componentPath, args.name)
+    console.log(newComponentPath)
 
     console.log('')
     console.log(

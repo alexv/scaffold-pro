@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node ./scaffold.js"
+    "start": "node ./index.js"
   },
   "bin": {
     "scaffold": "./index.js"

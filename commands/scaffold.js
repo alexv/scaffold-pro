@@ -3,11 +3,11 @@ const path = require('path')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 
-const generator = require('../lib/generator.js')
+const generator = require('../utils/generator.js')
 
 const componentPath = path.resolve(process.cwd(), './src/components/')
 
-process.stdout.write('\x1bc') // clear terminal
+// process.stdout.write('\x1bc') // clear terminal
 
 console.log(chalk.green.bold('Scaffold a new component'))
 console.log(chalk.gray('Component will be created at:'))
