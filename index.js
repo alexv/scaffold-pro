@@ -17,10 +17,7 @@ program
   .command('init')
   .description('initialize scaffold project')
   .action(() => {
-    // create components directory
-    // add components.js to components directory
-    // maybe create example component/container
-    console.log('legoo')
+    console.log('NEED TO ADD INDEX FILE TO COMPONENTS FOLDER')
     require('./commands/init')
   })
 
