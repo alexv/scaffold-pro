@@ -21,7 +21,7 @@ module.exports = componentPath => {
       .then(() => {
         console.log(
           chalk.green('Creating ') +
-            chalk.yellow.bold('index.js') +
+            chalk.yellow.bold('components.js') +
             chalk.green(' at ') +
             chalk.yellow(componentPath)
         )
@@ -31,7 +31,7 @@ module.exports = componentPath => {
             path.resolve(__dirname, '../templates/allComponents.js')
           )
           let write = fs.createWriteStream(
-            path.resolve(componentPath, 'index.js')
+            path.resolve(componentPath, 'components.js')
           )
           let rejectCleanup = e => {
             err = true
